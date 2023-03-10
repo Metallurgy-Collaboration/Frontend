@@ -17,6 +17,17 @@ const companies = [
     "vst-shakti"
 ]
 
+function createSlideshowElem(image){
+    let newDiv = document.createElement('div');
+    newDiv.classList.add("main-container-bg")
+    newDiv.style.background = "url('./images/" + image + "'), #999";
+    newDiv.style.backgroundBlendMode = "multiply";
+    newDiv.style.backgroundSize = "cover";
+    newDiv.style.backgroundPosition = "center";
+
+    document.getElementById('main-container-bgs').appendChild(newDiv)
+}
+
 function createProduct(name, image, description, link){
     let newDiv = document.createElement("div")
     newDiv.classList.add("product")
@@ -59,6 +70,14 @@ function initialize(){
 
         document.getElementById("companies-list").appendChild(elem);
     }
+
+    createSlideshowElem("electrical.jpeg")
+    createSlideshowElem("office.jpeg")
+    createSlideshowElem("workers.jpeg")
+    createSlideshowElem("Unit.jpg")
+    createSlideshowElem("ashok.jpeg")
+
+    document.querySelectorAll(".main-container-bg")[0].classList.add("active-container-bg");
 
     createProduct("Cylinders Head & Block", "cylinder-head-and-block-4.jpg", "Expertly crafted components designed for high-performance engines, providing exceptional durability and strength with advanced metallurgical properties and innovative design.", "./products#cylinders-head-and-block")
     createProduct("Two Wheeler Gear Shifters", "two-wheeler-gear-shifters-2.jpg", "Precision-engineered components designed to provide smooth and accurate gear shifts, ensuring reliable and comfortable riding experience.", "./products#two-wheeler-gear-shifters")
