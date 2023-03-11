@@ -137,6 +137,7 @@
 #products > h1{
     margin:0;
     font-size:32px;
+    text-align:center;
 }
 
 #products-categories{
@@ -158,6 +159,7 @@
     justify-content:flex-start;
     background:white;
     overflow:hidden;
+    position:relative;
 }
 
 .product > div:first-of-type{
@@ -181,7 +183,7 @@
     height:128px;
 }
 
-.product > div:last-of-type{
+.product > div:nth-of-type(2){
     width:0;
     opacity:0;
     visibility:hidden;
@@ -193,18 +195,18 @@
     gap:6px;
 }
 
-.product > div:last-of-type > h1{
+.product > div:nth-of-type(2) > h1{
     font-size:14px;
     text-align:left;
     margin:0;
 }
 
-.product > div:last-of-type > p{
+.product > div:nth-of-type(2) > p{
     font-size:11px;
     margin:0;
 }
 
-.product > div:last-of-type > a{
+.product > div:nth-of-type(2) > a{
     font-size:12px;
     margin:0;
     width:100%;
@@ -215,11 +217,52 @@
     text-decoration:none;
 }
 
+.product > p{
+    position:absolute;
+    bottom:24px;
+    right:24px;
+    text-transform:uppercase;
+    font-weight:700;
+    color:black;
+    border:1px solid black;
+    padding:6px 24px;
+    font-size:10px;
+    text-overflow:clip;
+    white-space: nowrap;
+    transition-duration:500ms;
+    margin:0;
+}
+
+.product:hover > p{
+    right:512px;
+}
+
+/*.product > h3{
+    position:absolute;
+    top:24px;
+    left:24px;
+    font-size:10px;
+    margin:0;
+    color:white;
+    font-weight:600;
+    background:var(--accent-color);
+    padding:3px 6px;
+
+}
+
+.product:hover > h3{
+
+}*/
+
+.product > h3{
+    display:none;
+}
+
 .product:hover > div:first-of-type{
     width:50%;
 }
 
-.product:hover > div:last-of-type{
+.product:hover > div:nth-of-type(2){
     width:calc(50% - 24px);
     visibility:visible;
     opacity:1;

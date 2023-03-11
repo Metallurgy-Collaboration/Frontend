@@ -62,3 +62,129 @@
     height:18px;
     filter:invert(1);
 }
+
+#contact{
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:center;
+    gap:24px;
+}
+
+#instructions{
+    width:256px;
+    font-size:12px;
+    background:var(--light-accent);
+    padding:24px;
+}
+
+#instructions > p{
+    font-size:12px;
+    margin:0;
+}
+
+.instructions-information{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-start;
+    gap:12px;
+    width:100%;
+    margin-top:12px;
+}
+
+.instructions-information > img{
+    height:14px;
+}
+
+.instructions-information > p{
+    margin:0;
+    font-size:12px;
+    font-weight:500;
+}
+
+#contact-form{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    text-align:left;
+    gap:6px;
+}
+
+#contact-form > h1{
+    font-size:16px;
+    margin:0;
+}
+
+.input, .input-with-btn{
+    border:1px solid black;
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:24px;
+    width:calc(50vw - 280px);
+}
+
+.input > img, .input-with-btn > img{
+    position:absolute;
+    left:9px;
+    height:18px;
+    filter:invert(0.25);
+}
+
+.input > input{
+    height:36px;
+    width:calc(50vw - 280px);
+    padding-left:36px;
+    outline:none;
+    font-size:14px;
+    border:none;
+    outline:none;
+}
+
+.input-with-btn > input{
+    height:36px;
+    width:calc(50vw - 316px);
+    padding-left:36px;
+    padding-right:36px;
+    outline:none;
+    font-size:14px;
+    outline:none;
+    border:none;
+}
+
+.input-with-btn > input:focus ~ button > img{
+    filter:invert(0);
+}
+
+.input-with-btn > button{
+    position:absolute;
+    right:0;
+    height:36px;
+    width:36px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    background:none;
+    border:none;
+    outline:none;
+}
+
+.input-with-btn > button > img{
+    height:18px;
+    filter:invert(0.25);
+    transition-duration:250ms;
+    cursor:pointer;
+}
+
+#contact-form > textarea{
+    width:calc(50vw - 306px);
+    border:1px solid black;
+    padding:12px;
+    resize:none;
+    outline:none;
+}
