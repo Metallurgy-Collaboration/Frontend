@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../images/logo.png">
 
     <script src="script.js" defer></script>
 </head>
@@ -53,12 +54,13 @@
                 <input type="text" placeholder="Email">
             </div>
             <h1>Product of Interest</h1>
-            <div class="input-with-btn">
+            <div class="input-with-btn input-dropdown" id="products-dropdown">
                 <img src="./icons/products.png" alt="Something is wrong.">
-                <input type="text" placeholder="Search For Products">
-                <button><img src="./icons/search.png" alt="Search"></button>
+                <input type="text" placeholder="Search For Products" id="products-search-input">
+                <button onclick="search()"><img src="./icons/search.png" alt="Search"></button>
+                <div id="products-dropdown-list"></div>
             </div>
-            <div id="products-list"></div>
+            <h1>Message</h1>
             <textarea name="" id="content" cols="30" rows="10" class="large-input" placeholder="Message Content"></textarea>
             <button>Send</button>
         </div>

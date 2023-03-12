@@ -109,6 +109,8 @@
     align-items:flex-start;
     justify-content:flex-start;
     text-align:left;
+    position:relative;
+    padding-bottom:64px;
     gap:6px;
 }
 
@@ -157,7 +159,8 @@
 }
 
 .input-with-btn > input:focus ~ button > img{
-    filter:invert(0);
+    opacity:1;
+    visibility:visible;
 }
 
 .input-with-btn > button{
@@ -178,7 +181,120 @@
     height:18px;
     filter:invert(0.25);
     transition-duration:250ms;
+    opacity:0;
+    visibility:hidden;
     cursor:pointer;
+}
+
+.input-dropdown{
+    position:relative;
+    transition-duration:250ms;
+}
+
+.active-dropdown{
+    margin-bottom:268px;
+}
+
+.input-dropdown > div{
+    position:absolute;
+    left:-1px;
+    top:38px;
+    width:calc(100% - 48px);
+    padding:0 24px;
+    height:0;
+    border:1px solid black;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    visibility:hidden;
+    opacity:0;
+}
+
+#products-dropdown-list{
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+#products-dropdown-list > div{
+    padding:6px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    cursor:pointer;
+    position:relative;
+}
+
+#products-dropdown-list > div.dropdown-not-selected{
+    border:1px solid gray;
+}
+
+#products-dropdown-list > div:not(dropdown-not-selected){
+    border:1px solid black;
+}
+
+#products-dropdown-list > div > div{
+    background:black;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    width:18px;
+    height:18px;
+    transition-duration:250ms;
+    position:absolute;
+    right:-9px;
+    top:-9px;
+}
+
+#products-dropdown-list > div > div > img{
+    filter:invert(1);
+    height:12px;
+}
+
+#products-dropdown-list > div:not(.dropdown-selected) > div{
+    opacity:0;
+    visibility:hidden;
+}
+
+#products-dropdown-list > div.dropdown-selected > div{
+    opacity:1;
+    visibility:visible;
+}
+
+#products-dropdown-list > div > img{
+    height:48px;
+}
+
+#products-dropdown-list > div.dropdown-not-selected > img{
+    filter: grayscale(1);
+}
+
+#products-dropdown-list > div > h1{
+    font-size:12px;
+    width:96px;
+    text-align:center;
+    margin:0;
+    font-weight:600;
+}
+
+#products-dropdown-list > div.dropdown-not-selected > h1{
+    color:gray;
+}
+
+#products-dropdown-list > div:not(dropdown-not-selected) > h1{
+    color:black;
+}
+
+.active-dropdown > div{
+    height:208px;
+    padding:24px;
+    opacity:1;
+    visibility:visible;
 }
 
 #contact-form > textarea{
@@ -187,4 +303,21 @@
     padding:12px;
     resize:none;
     outline:none;
+}
+
+#contact-form > button:last-of-type{
+    padding:12px 64px;
+    border:none;
+    outline:none;
+    background:var(--accent-color);
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-weight:600;
+    transition-duration:250ms;
+    position:absolute;
+    bottom:0;
+    right:0;
+    cursor:pointer;
+    font-size:14px;
 }
