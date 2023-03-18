@@ -94,7 +94,7 @@ function initialize(){
     createProduct("Two Wheeler Gear Shifters", "two-wheeler-gear-shifters-2.jpg", "Precision-engineered components designed to provide smooth and accurate gear shifts, ensuring reliable and comfortable riding experience.", "./products#two-wheeler-gear-shifters", false)
     createProduct("Refrigeration Compressor Components", "refrigeration-compressor-components-1.jpg", "High-quality and durable components designed to deliver optimal performance in refrigeration systems, ensuring efficient and reliable cooling.", "./products#refrigeration-compressor-components", false)
     createProduct("Turbochargers", "turbocharger-3.jpg", "High-performance component designed with advanced metallurgical properties and precise engineering to deliver exceptional power, efficiency and reliability to automotive engines.", "./products#turbochargers", false)
-    createProduct("Other Products", "other-1.jpg", "Discover our diverse range of high-quality and durable products designed with advanced metallurgical properties and precision engineering, offering optimal performance and reliability across various industries.", "./products#miscellaneous", true)
+    createProduct("Other Products", "other-1.jpg", "Discover our diverse range of high-quality and durable products designed with advanced metallurgical properties and precision engineering, offering optimal performance and reliability across various industries.", "./products#other", true)
 
 
     const slideshowInterval = setInterval(updateSlideshow, 5000);

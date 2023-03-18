@@ -1,5 +1,5 @@
 #main-container{
-    background:url("../images/workers.jpeg"), #999;
+    background:url("../images/machinery.jpeg"), #999;
     background-blend-mode:multiply;
     background-size:cover;
     background-position:center;
@@ -65,13 +65,120 @@
 
 .product-showcase:nth-child(even){
     background:white;
+    flex-direction:row;
 }
 
 .product-showcase:nth-child(odd){
     background:var(--light-accent);
+    flex-direction:row-reverse;
 }
 
 .product-showcase{
     padding:128px 0;
     width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5vw;
+}
+
+.product-showcase > div{
+    width:40vw;
+    display:flex;
+    position:relative;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:24px;
+}
+
+.product-showcase > div:first-of-type{
+    height:512px;
+}
+
+.product-showcase > div:first-of-type > div:first-of-type{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0.75;
+}
+
+.product-showcase > div:first-of-type > div:last-of-type{
+    position:absolute;
+    z-index:1;
+}
+
+.product-showcase > div:last-of-type{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:24px;
+}
+
+.product-showcase > div:last-of-type > div{
+    height:170px;
+    width:256px;
+    position:relative;
+    background:white;
+    border:1px solid var(--border-color);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.product-showcase > div:last-of-type > div > img{
+    position:absolute;
+    transition-duration:250ms;
+    height:192px;
+}
+
+.product-showcase > div:last-of-type > div:hover > img{
+    height:128px;
+}
+
+.product-showcase > div:last-of-type > div:hover > div{
+    visibility:visible;
+    opacity:1;
+}
+
+.product-showcase > div:last-of-type > div > div{
+    position:absolute;
+    background:rgba(255,255,255,0.5);
+    width:calc(100% - 48px);
+    height:calc(100% - 48px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition-duration:250ms;
+    opacity:0;
+    visibility:hidden;
+    padding:24px;
+    gap:12px;
+}
+
+.product-showcase > div:last-of-type > div > div > h1{
+    font-size:14px;
+    margin:0;
+}
+
+.product-showcase > div:last-of-type > div > div > a{
+    color:white;
+    background:var(--accent-color);
+    border:none;
+    outline:none;
+    cursor:pointer;
+    width:100%;
+    padding:6px 0;
+    font-weight:600;
+    text-decoration:none;
 }
