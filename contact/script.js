@@ -1,4 +1,5 @@
 const products = [];
+let selectedProduct;
 
 class Product {
     constructor(name, image) {
@@ -28,6 +29,38 @@ function selectSearchResult(resultIndex, productIndex){
 
         elemNum++;
     })
+
+    selectedProduct = productIndex;
+}
+
+async function sendEmail(){
+    const response = await fetch('https://us-central1-metallurgy-collaborations.cloudfunctions.net/app', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type'
+        },
+        body: JSON.stringify({
+            name: document.getElementById("name-input").value,
+            email: document.getElementById("email-input").value,
+            phone: document.getElementById("phone-input").value,
+            product: products[selectedProduct].getName,
+            message: document.getElementById("message").value
+        }),
+        mode: 'cors'
+    })
+
+    const context = await response;
+    console.log(context)
+
+    if(context.status === 500){
+        document.getElementById("send-modal").classList.add("active-modal")
+        setTimeout(function(){
+            document.getElementById("send-modal").classList.remove("active-modal")
+        }, 5000)
+    }
 }
 
 function createSearchResult(name, image, productIndex, resultIndex){
